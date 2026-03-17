@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSSSAA 2026 Mountain Bike Race Routes</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #222; background: #f5f5f5; }
+    a { color: #1a6fb5; }
+
+    .header { background: #fff; padding: 2rem 1rem 1rem; text-align: center; border-bottom: 1px solid #ddd; }
+    .header h1 { font-size: 1.6rem; margin-bottom: .4rem; }
+    .header p { color: #555; font-size: .95rem; max-width: 600px; margin: 0 auto; }
+
+    /* Quick links */
+    .quick-links { background: #fff; padding: .75rem 1rem; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; font-size: .85rem; }
+    .quick-links a { white-space: nowrap; }
+
+    /* Sticky grade filter */
+    .filter-bar { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 2px solid #ddd; padding: .6rem 1rem; display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; align-items: center; }
+    .filter-bar span { font-weight: 600; font-size: .85rem; margin-right: .25rem; }
+    .filter-btn { border: 1px solid #bbb; background: #f0f0f0; border-radius: 4px; padding: .4rem .9rem; font-size: .85rem; cursor: pointer; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .filter-btn:hover { background: #e0e0e0; }
+    .filter-btn.active { background: #1a6fb5; color: #fff; border-color: #1a6fb5; }
+
+    /* Main content */
+    .content { max-width: 900px; margin: 0 auto; padding: 1rem; }
+
+    /* Race section */
+    .race-section { margin-bottom: 2rem; }
+    .race-header { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; margin-bottom: .75rem; padding-bottom: .4rem; border-bottom: 2px solid #ddd; }
+    .race-header h2 { font-size: 1.25rem; }
+    .race-date { color: #666; font-size: .9rem; }
+    .badge { display: inline-block; padding: .15rem .55rem; border-radius: 3px; font-size: .75rem; font-weight: 700; text-transform: uppercase; color: #fff; }
+    .badge-xc { background: #2e8b57; }
+    .badge-enduro { background: #c0392b; }
+    .badge-tbd { background: #888; }
+
+    /* Route card */
+    .route-card { background: #fff; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1rem; overflow: hidden; }
+    .route-card-header { padding: .6rem .8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .4rem; border-bottom: 1px solid #eee; }
+    .route-card-header h3 { font-size: 1rem; }
+    .route-card-header a { font-size: .85rem; }
+    .route-card iframe { display: block; width: 100%; height: 500px; border: 0; }
+
+    /* Placeholder card */
+    .placeholder { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 2rem; text-align: center; color: #888; font-size: .95rem; }
+
+    .footer { text-align: center; padding: 2rem 1rem; color: #888; font-size: .8rem; border-top: 1px solid #ddd; margin-top: 2rem; }
+
+    @media (max-width: 600px) {
+      .header h1 { font-size: 1.25rem; }
+      .route-card iframe { height: 400px; }
+      .race-header h2 { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>NSSSAA 2026 Mountain Bike Race Routes</h1>
+  <p>Interactive maps for all North Shore Secondary Schools Athletic Association 2026 high school mountain bike races.</p>
+</div>
+
+<nav class="quick-links">
+  <a href="#race1">Race 1: Richard Juryn</a>
+  <a href="#race2">Race 2: Seymour</a>
+  <a href="#race3">Race 3: Fromme</a>
+  <a href="#race4">Race 4: Fromme</a>
+  <a href="#race5">Race 5: Squamish</a>
+  <a href="#race6">Race 6: Whistler</a>
+  <a href="#provincials">Provincials</a>
+</nav>
+
+<div class="filter-bar">
+  <span>Grade:</span>
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="8">Gr 8</button>
+  <button class="filter-btn" data-filter="9">Gr 9</button>
+  <button class="filter-btn" data-filter="10">Gr 10</button>
+  <button class="filter-btn" data-filter="11">Gr 11</button>
+  <button class="filter-btn" data-filter="12">Gr 12</button>
+</div>
+
+<div class="content">
+
+  <!-- Race 1 -->
+  <section class="race-section" id="race1">
+    <div class="race-header">
+      <h2>Race 1: Richard Juryn</h2>
+      <span class="race-date">Apr 8</span>
+      <span class="badge badge-xc">XC</span>
+    </div>
+    <div class="route-card" data-grades="all">
+      <div class="route-card-header">
+        <h3>All Grades</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-1-richard-juryn-xc/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65806&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 1 Richard Juryn XC route map"></iframe>
+    </div>
+  </section>
+
+  <!-- Race 2 -->
+  <section class="race-section" id="race2">
+    <div class="race-header">
+      <h2>Race 2: Seymour</h2>
+      <span class="race-date">Apr 15</span>
+      <span class="badge badge-enduro">Enduro</span>
+    </div>
+    <div class="route-card" data-grades="8,9">
+      <div class="route-card-header">
+        <h3>Grades 8–9</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-2-seymour-enduro-gr-8-9/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65807&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 2 Seymour Enduro Gr 8-9 route map"></iframe>
+    </div>
+    <div class="route-card" data-grades="10,11,12">
+      <div class="route-card-header">
+        <h3>Grades 10–11–12</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-2-seymour-enduro-gr-10-11-12/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65808&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 2 Seymour Enduro Gr 10-11-12 route map"></iframe>
+    </div>
+  </section>
+
+  <!-- Race 3 -->
+  <section class="race-section" id="race3">
+    <div class="race-header">
+      <h2>Race 3: Fromme</h2>
+      <span class="race-date">Apr 22</span>
+      <span class="badge badge-xc">XC</span>
+    </div>
+    <div class="route-card" data-grades="8,9">
+      <div class="route-card-header">
+        <h3>Grades 8–9</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-3-fromme-xc-gr-8-9/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65809&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 3 Fromme XC Gr 8-9 route map"></iframe>
+    </div>
+    <div class="route-card" data-grades="10,11,12">
+      <div class="route-card-header">
+        <h3>Grades 10–11–12</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-3-fromme-xc-gr-10-11-12/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65810&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 3 Fromme XC Gr 10-11-12 route map"></iframe>
+    </div>
+  </section>
+
+  <!-- Race 4 -->
+  <section class="race-section" id="race4">
+    <div class="race-header">
+      <h2>Race 4: Fromme</h2>
+      <span class="race-date">Apr 29</span>
+      <span class="badge badge-enduro">Enduro</span>
+    </div>
+    <div class="route-card" data-grades="8,9">
+      <div class="route-card-header">
+        <h3>Grades 8–9</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-4-fromme-enduro-gr-8-9/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65811&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 4 Fromme Enduro Gr 8-9 route map"></iframe>
+    </div>
+    <div class="route-card" data-grades="10,11,12">
+      <div class="route-card-header">
+        <h3>Grades 10–11–12</h3>
+        <a href="https://www.trailforks.com/route/nsssaa-2026-race-4-fromme-enduro-gr10-11-12/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65812&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 4 Fromme Enduro Gr 10-11-12 route map"></iframe>
+    </div>
+  </section>
+
+  <!-- Race 5 -->
+  <section class="race-section" id="race5">
+    <div class="race-header">
+      <h2>Race 5: Squamish</h2>
+      <span class="race-date">May 6</span>
+      <span class="badge badge-enduro">Enduro</span>
+    </div>
+    <div class="route-card" data-grades="8,9">
+      <div class="route-card-header">
+        <h3>Grades 8–9</h3>
+        <a href="https://www.trailforks.com/route/april-30-squamish-high-school-enduro-gr-8-9-course/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=61194&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 5 Squamish Enduro Gr 8-9 route map"></iframe>
+    </div>
+    <div class="route-card" data-grades="10,11,12">
+      <div class="route-card-header">
+        <h3>Grades 10–12</h3>
+        <a href="https://www.trailforks.com/route/april-30-squamish-high-school-enduro-gr-1012-course/" target="_blank" rel="noopener">View on Trailforks</a>
+      </div>
+      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=61195&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 5 Squamish Enduro Gr 10-12 route map"></iframe>
+    </div>
+  </section>
+
+  <!-- Race 6 -->
+  <section class="race-section" id="race6">
+    <div class="race-header">
+      <h2>Race 6: Whistler</h2>
+      <span class="race-date">May 13</span>
+      <span class="badge badge-tbd">TBD</span>
+    </div>
+    <div class="placeholder" data-grades="all">Map coming soon</div>
+  </section>
+
+  <!-- Provincials -->
+  <section class="race-section" id="provincials">
+    <div class="race-header">
+      <h2>Provincials</h2>
+      <span class="race-date">May 21–22 &middot; Location TBD</span>
+      <span class="badge badge-tbd">TBD</span>
+    </div>
+    <div class="placeholder" data-grades="all">Map coming soon</div>
+  </section>
+
+</div>
+
+<footer class="footer">
+  Route data from <a href="https://www.trailforks.com/" target="_blank" rel="noopener">Trailforks</a>. Not an official NSSSAA site.
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var buttons = document.querySelectorAll(".filter-btn");
+    var cards = document.querySelectorAll(".route-card, .placeholder");
+    var sections = document.querySelectorAll(".race-section");
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        buttons.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        var filter = btn.getAttribute("data-filter");
+
+        cards.forEach(function (card) {
+          var grades = card.getAttribute("data-grades");
+          if (filter === "all" || grades === "all" || grades.split(",").indexOf(filter) !== -1) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        // Hide section headers when all their cards are hidden
+        sections.forEach(function (section) {
+          var sectionCards = section.querySelectorAll(".route-card, .placeholder");
+          var anyVisible = false;
+          sectionCards.forEach(function (c) {
+            if (c.style.display !== "none") anyVisible = true;
+          });
+          section.style.display = anyVisible ? "" : "none";
+        });
+      });
+    });
+
+    // Smooth scroll for quick links
+    document.querySelectorAll('.quick-links a').forEach(function (link) {
+      link.addEventListener("click", function (e) {
+        var target = document.querySelector(link.getAttribute("href"));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
