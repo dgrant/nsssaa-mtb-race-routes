@@ -13,12 +13,11 @@
     .header h1 { font-size: 1.6rem; margin-bottom: .4rem; }
     .header p { color: #555; font-size: .95rem; max-width: 600px; margin: 0 auto; }
 
-    /* Quick links */
-    .quick-links { background: #fff; padding: .75rem 1rem; border-bottom: 1px solid #ddd; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; font-size: .85rem; }
+    /* Sticky top bar (quick links + grade filter) */
+    .sticky-bar { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 2px solid #ddd; }
+    .quick-links { padding: .5rem 1rem; border-bottom: 1px solid #eee; display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; font-size: .75rem; }
     .quick-links a { white-space: nowrap; }
-
-    /* Sticky grade filter */
-    .filter-bar { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 2px solid #ddd; padding: .6rem 1rem; display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; align-items: center; }
+    .filter-bar { padding: .5rem 1rem; display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; align-items: center; }
     .filter-bar span { font-weight: 600; font-size: .85rem; margin-right: .25rem; }
     .filter-btn { border: 1px solid #bbb; background: #f0f0f0; border-radius: 4px; padding: .4rem .9rem; font-size: .85rem; cursor: pointer; min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
     .filter-btn:hover { background: #e0e0e0; }
@@ -47,12 +46,17 @@
     /* Placeholder card */
     .placeholder { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 2rem; text-align: center; color: #888; font-size: .95rem; }
 
+    /* Past results link */
+    .past-results { padding: .5rem .8rem; background: #f9f9f9; border-top: 1px solid #eee; font-size: .85rem; }
+
     .footer { text-align: center; padding: 2rem 1rem; color: #888; font-size: .8rem; border-top: 1px solid #ddd; margin-top: 2rem; }
 
     @media (max-width: 600px) {
       .header h1 { font-size: 1.25rem; }
       .route-card iframe { height: 400px; }
       .race-header h2 { font-size: 1.1rem; }
+      .filter-bar span { display: none; }
+      .filter-btn { min-width: 0; min-height: 0; padding: .25rem .5rem; font-size: .75rem; }
     }
   </style>
 </head>
@@ -63,24 +67,25 @@
   <p>Interactive maps for all North Shore Secondary Schools Athletic Association 2026 high school mountain bike races.</p>
 </div>
 
-<nav class="quick-links">
-  <a href="#race1">Race 1: Richard Juryn</a>
-  <a href="#race2">Race 2: Seymour</a>
-  <a href="#race3">Race 3: Fromme</a>
-  <a href="#race4">Race 4: Fromme</a>
-  <a href="#race5">Race 5: Squamish</a>
-  <a href="#race6">Race 6: Whistler</a>
-  <a href="#provincials">Provincials</a>
-</nav>
-
-<div class="filter-bar">
-  <span>Grade:</span>
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="8">Gr 8</button>
-  <button class="filter-btn" data-filter="9">Gr 9</button>
-  <button class="filter-btn" data-filter="10">Gr 10</button>
-  <button class="filter-btn" data-filter="11">Gr 11</button>
-  <button class="filter-btn" data-filter="12">Gr 12</button>
+<div class="sticky-bar">
+  <nav class="quick-links">
+    <a href="#race1">Race 1: Richard Juryn</a>
+    <a href="#race2">Race 2: Seymour</a>
+    <a href="#race3">Race 3: Fromme</a>
+    <a href="#race4">Race 4: Fromme</a>
+    <a href="#race5">Race 5: Squamish</a>
+    <a href="#race6">Race 6: Whistler</a>
+    <a href="#provincials">Provincials</a>
+  </nav>
+  <div class="filter-bar">
+    <span>Grade:</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="8">Gr 8</button>
+    <button class="filter-btn" data-filter="9">Gr 9</button>
+    <button class="filter-btn" data-filter="10">Gr 10</button>
+    <button class="filter-btn" data-filter="11">Gr 11</button>
+    <button class="filter-btn" data-filter="12">Gr 12</button>
+  </div>
 </div>
 
 <div class="content">
@@ -97,7 +102,7 @@
         <h3>All Grades</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-1-richard-juryn-xc/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65806&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 1 Richard Juryn XC route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65806&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 1 Richard Juryn XC route map"></iframe>
     </div>
   </section>
 
@@ -113,15 +118,16 @@
         <h3>Grades 8–9</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-2-seymour-enduro-gr-8-9/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65807&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 2 Seymour Enduro Gr 8-9 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65807&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 2 Seymour Enduro Gr 8-9 route map"></iframe>
     </div>
     <div class="route-card" data-grades="10,11,12">
       <div class="route-card-header">
         <h3>Grades 10–11–12</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-2-seymour-enduro-gr-10-11-12/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65808&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 2 Seymour Enduro Gr 10-11-12 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65808&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 2 Seymour Enduro Gr 10-11-12 route map"></iframe>
     </div>
+    <div class="past-results" data-grades="all">2025 Results: <a href="https://zone4.ca/event/2025/NzK6er/" target="_blank" rel="noopener">Enduro Seymour (Apr 16)</a></div>
   </section>
 
   <!-- Race 3 -->
@@ -136,14 +142,14 @@
         <h3>Grades 8–9</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-3-fromme-xc-gr-8-9/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65809&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 3 Fromme XC Gr 8-9 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65809&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 3 Fromme XC Gr 8-9 route map"></iframe>
     </div>
     <div class="route-card" data-grades="10,11,12">
       <div class="route-card-header">
         <h3>Grades 10–11–12</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-3-fromme-xc-gr-10-11-12/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65810&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 3 Fromme XC Gr 10-11-12 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65810&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 3 Fromme XC Gr 10-11-12 route map"></iframe>
     </div>
   </section>
 
@@ -159,15 +165,16 @@
         <h3>Grades 8–9</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-4-fromme-enduro-gr-8-9/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65811&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 4 Fromme Enduro Gr 8-9 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65811&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 4 Fromme Enduro Gr 8-9 route map"></iframe>
     </div>
     <div class="route-card" data-grades="10,11,12">
       <div class="route-card-header">
         <h3>Grades 10–11–12</h3>
         <a href="https://www.trailforks.com/route/nsssaa-2026-race-4-fromme-enduro-gr10-11-12/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65812&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 4 Fromme Enduro Gr 10-11-12 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=65812&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 4 Fromme Enduro Gr 10-11-12 route map"></iframe>
     </div>
+    <div class="past-results" data-grades="all">2025 Results: <a href="https://zone4.ca/event/2025/dPjZYV/" target="_blank" rel="noopener">Enduro Fromme (May 7)</a></div>
   </section>
 
   <!-- Race 5 -->
@@ -182,15 +189,16 @@
         <h3>Grades 8–9</h3>
         <a href="https://www.trailforks.com/route/april-30-squamish-high-school-enduro-gr-8-9-course/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=61194&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 5 Squamish Enduro Gr 8-9 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=61194&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 5 Squamish Enduro Gr 8-9 route map"></iframe>
     </div>
     <div class="route-card" data-grades="10,11,12">
       <div class="route-card-header">
         <h3>Grades 10–12</h3>
         <a href="https://www.trailforks.com/route/april-30-squamish-high-school-enduro-gr-1012-course/" target="_blank" rel="noopener">View on Trailforks</a>
       </div>
-      <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=61195&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=1" loading="lazy" title="Race 5 Squamish Enduro Gr 10-12 route map"></iframe>
+      <iframe scrolling="no" data-src="https://www.trailforks.com/widgets/route/?id=61195&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 5 Squamish Enduro Gr 10-12 route map"></iframe>
     </div>
+    <div class="past-results" data-grades="all">2025 Results: <a href="https://zone4.ca/event/2025/RxllZp/" target="_blank" rel="noopener">Enduro Squamish (Apr 30)</a></div>
   </section>
 
   <!-- Race 6 -->
@@ -207,10 +215,11 @@
   <section class="race-section" id="provincials">
     <div class="race-header">
       <h2>Provincials</h2>
-      <span class="race-date">May 21–22 &middot; Location TBD</span>
+      <span class="race-date">May 21–22 &middot; Quesnel, BC</span>
       <span class="badge badge-tbd">TBD</span>
     </div>
     <div class="placeholder" data-grades="all">Map coming soon</div>
+    <div class="past-results" data-grades="all">2025 Results: <a href="https://zone4.ca/event/2025/Xm3R9m/" target="_blank" rel="noopener">BC Provincials — Burnaby (May 22–23)</a></div>
   </section>
 
 </div>
@@ -222,7 +231,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     var buttons = document.querySelectorAll(".filter-btn");
-    var cards = document.querySelectorAll(".route-card, .placeholder");
+    var cards = document.querySelectorAll(".route-card, .placeholder, .past-results");
     var sections = document.querySelectorAll(".race-section");
 
     buttons.forEach(function (btn) {
@@ -242,7 +251,7 @@
 
         // Hide section headers when all their cards are hidden
         sections.forEach(function (section) {
-          var sectionCards = section.querySelectorAll(".route-card, .placeholder");
+          var sectionCards = section.querySelectorAll(".route-card, .placeholder, .past-results");
           var anyVisible = false;
           sectionCards.forEach(function (c) {
             if (c.style.display !== "none") anyVisible = true;
@@ -252,20 +261,35 @@
       });
     });
 
-    // Hide details panel on mobile by swapping iframe src params
-    if (window.innerWidth <= 600) {
-      document.querySelectorAll(".route-card iframe").forEach(function (iframe) {
-        iframe.src = iframe.src.replace("&details=1", "&details=0");
+    // Lazy-load iframes when scrolled into view
+    var isMobile = window.innerWidth <= 600;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var iframe = entry.target;
+          var src = iframe.getAttribute("data-src");
+          if (src) {
+            if (isMobile) src = src.replace("&details=1", "&details=0");
+            iframe.src = src;
+            iframe.removeAttribute("data-src");
+          }
+          observer.unobserve(iframe);
+        }
       });
-    }
+    }, { rootMargin: "200px" });
+    document.querySelectorAll(".route-card iframe[data-src]").forEach(function (iframe) {
+      observer.observe(iframe);
+    });
 
-    // Smooth scroll for quick links
+    // Smooth scroll for quick links, offset by sticky bar height
     document.querySelectorAll('.quick-links a').forEach(function (link) {
       link.addEventListener("click", function (e) {
         var target = document.querySelector(link.getAttribute("href"));
         if (target) {
           e.preventDefault();
-          target.scrollIntoView({ behavior: "smooth" });
+          var barHeight = document.querySelector('.sticky-bar').offsetHeight;
+          var top = target.getBoundingClientRect().top + window.pageYOffset - barHeight - 8;
+          window.scrollTo({ top: top, behavior: "smooth" });
         }
       });
     });

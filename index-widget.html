@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widget Test — NSSSAA 2026</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #222; background: #f5f5f5; padding: 1rem; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1.4rem; margin-bottom: .5rem; }
+    h2 { font-size: 1.1rem; margin: 1.5rem 0 .5rem; color: #555; }
+    p { font-size: .9rem; color: #666; margin-bottom: 1rem; }
+    .card { background: #fff; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 1.5rem; overflow: hidden; }
+    .card-header { padding: .6rem .8rem; border-bottom: 1px solid #eee; font-weight: 600; }
+    .card-body { padding: 0; }
+    .card-body iframe { display: block; width: 100%; height: 500px; border: 0; }
+  </style>
+</head>
+<body>
+
+<h1>Widget vs Iframe Comparison</h1>
+<p>Same route (Race 1: Richard Juryn XC, ID 65806) rendered two ways.</p>
+
+<h2>JS Widget (responsive height)</h2>
+<div class="card">
+  <div class="card-header">Race 1 — JS Widget</div>
+  <div class="card-body">
+    <!-- TRAILFORKS WIDGET START -->
+    <div class="TrailforksWidgetRoute" data-w="100%" data-h="500px" data-id="65806" data-activitytype="1" data-map="1" data-elevation="1" data-trails="1" data-details="1" data-section="0" data-units="metric" data-basicmap="0"></div>
+    <!-- TRAILFORKS WIDGET END -->
+  </div>
+</div>
+
+<h2>Iframe (fixed height)</h2>
+<div class="card">
+  <div class="card-header">Race 1 — Iframe</div>
+  <div class="card-body">
+    <iframe scrolling="no" src="https://www.trailforks.com/widgets/route/?id=65806&w=100%25&h=500px&activitytype=1&map=1&elevation=1&trails=1&details=1&s=0&units=metric&basicmap=0" title="Race 1 iframe"></iframe>
+  </div>
+</div>
+
+<script type="application/javascript" src="https://es.pinkbike.org/326/sprt/j/trailforks/iframeResizer.min.js"></script>
+<script type="text/javascript">
+var script = document.createElement("script"); script.setAttribute("src", "https://es.pinkbike.org/ttl-86400/sprt/j/trailforks/widget.js"); document.getElementsByTagName("head")[0].appendChild(script); var widgetCheck = false;
+</script>
+
+</body>
+</html>
